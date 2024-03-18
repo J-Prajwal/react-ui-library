@@ -13,7 +13,7 @@ function App() {
         <SidebarHeader>Component List</SidebarHeader>
         <ComponentListWrapper>
           {componentList.map((ele, i) => (
-            <ComponentList onClick={() => handleOnClick(ele)}>
+            <ComponentList key={i} onClick={() => handleOnClick(ele)}>
               {i + 1}. {ele.name}
             </ComponentList>
           ))}
@@ -64,6 +64,7 @@ const ComponentList = styled.div`
 `;
 
 const ComponentWrapper = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 83%;
+  display: flex;
 `;

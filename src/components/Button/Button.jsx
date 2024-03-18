@@ -1,17 +1,28 @@
 // This is what the developer of the Library will write
 import React from "react";
-import styled from "styled-components";
+import { ButtonWrapper, Spinner } from "./Button.styled";
 
-const Button = ({ children }) => {
-  return <ButtonWrapper>{children}</ButtonWrapper>;
+const Button = ({
+  children,
+  variant,
+  isLoading,
+  isDisabled,
+  size,
+  color,
+  bgColor,
+  onClick,
+}) => {
+  return (
+    <ButtonWrapper
+      isDisabled={isDisabled}
+      disabled={isDisabled}
+      variant={variant}
+      size={size}
+      onClick={onClick}
+    >
+      {isLoading ? <Spinner /> : children}
+    </ButtonWrapper>
+  );
 };
 
 export default Button;
-
-const ButtonWrapper = styled.button`
-  border: 1px solid black;
-  height: 50px;
-  width: 80px;
-  color: #5353a5;
-  border-radius: 10px;
-`;
