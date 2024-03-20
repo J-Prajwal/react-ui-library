@@ -1,5 +1,5 @@
-import Typography from "./components/Typography/Typography";
 import ButtonViewer from "./viewerComponents/ButtonViewer/ButtonViewer";
+import TypographyViewer from "./viewerComponents/TypographyViewer/TypographyViewer";
 
 export const componentList = [
   {
@@ -10,6 +10,6 @@ export const componentList = [
   {
     id: 2,
     name: "Typography",
-    component: <Typography></Typography>,
+    component: <TypographyViewer />,
   },
 ];
