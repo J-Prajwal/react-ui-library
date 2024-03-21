@@ -23,3 +23,24 @@ export const darkenHexColor = (hex, percent) => {
 
   return darkerHex;
 };
+
+export const lightenHexColor = (hex, percent) => {
+  // Remove the # if it's there
+  hex = hex.replace(/^#/, "");
+
+  // Convert hex to RGB
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+
+  // Calculate the lighter color
+  const newR = Math.min(255, Math.round(r + ((255 - r) * percent) / 100));
+  const newG = Math.min(255, Math.round(g + ((255 - g) * percent) / 100));
+  const newB = Math.min(255, Math.round(b + ((255 - b) * percent) / 100));
+
+  // Convert the new RGB values back to hex
+  const lighterHex =
+    "#" + ((1 << 24) + (newR << 16) + (newG << 8) + newB).toString(16).slice(1);
+
+  return lighterHex;
+};
