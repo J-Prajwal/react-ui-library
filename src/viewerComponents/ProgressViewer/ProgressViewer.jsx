@@ -36,8 +36,20 @@ const ProgressViewer = () => {
         gap: "10px",
       }}
     >
-      <Progress progress={value} size={150} variant={"bar"} rounded={true} />
-      <Progress progress={100} size={150} variant={"circle"} color={"orange"} />
+      <Progress
+        progress={46}
+        size={150}
+        variant={"bar"}
+        color={"#ff9933"}
+        rounded={true}
+      />
+      <Progress
+        progress={25}
+        size={100}
+        weight={10}
+        variant={"circle"}
+        color={"#ff9933"}
+      />
       {/* <div style={{ display: "flex", gap: "10px" }}>
         <button onClick={() => handleStartDownload()}>
           Start Download - Fast

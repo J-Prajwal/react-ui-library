@@ -34,19 +34,21 @@ export const CircleProgress = styled.svg`
 
 export const Circle = styled.circle`
   fill: none;
-  stroke: #e6e6e6; // light grey
-  stroke-width: 10px;
+  stroke: #e6e6e6; // light grey color for the main circle
+  stroke-width: ${({ weight }) => weight}px;
 `;
 
 export const ProgressCircle = styled.circle`
   fill: none;
+  stroke-width: ${({ weight }) => weight}px;
 `;
 
 export const ProgressText = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
+  font-weight: 500;
+  color: ${({ color }) => color || "black"};
+  font-size: ${({ size }) => Math.floor(size / 5)}px;
   transform: translate(-50%, -50%);
-  font-size: ${({ size }) => Math.floor(size / 4)}px;
-  color: orange;
 `;

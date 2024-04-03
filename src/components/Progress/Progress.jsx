@@ -17,6 +17,7 @@ const Progress = ({
   width,
   rounded,
   size = 150,
+  weight = 5,
 }) => {
   const circumference = 2 * Math.PI * size;
   const progressOffset = ((100 - progress) / 100) * circumference;
@@ -40,20 +41,18 @@ const Progress = ({
     return (
       <CircleProgressBarWrapper size={size}>
         <CircleProgress>
-          <Circle cx='50%' cy='50%' r={size} />
+          <Circle weight={weight} r={size} cx={"50%"} cy={"50%"} />
           <ProgressCircle
-            cx='50%'
-            cy='50%'
+            weight={weight}
+            stroke={color || "black"}
             r={size}
-            strokeWidth={"10px"}
+            cx={"50%"}
+            cy={"50%"}
             strokeDasharray={circumference}
             strokeDashoffset={progressOffset}
-            stroke={color || "black"}
           />
         </CircleProgress>
-        <ProgressText color={color} size={size}>
-          {progress}%
-        </ProgressText>
+        <ProgressText size={size}> {progress}% </ProgressText>
       </CircleProgressBarWrapper>
     );
 };
