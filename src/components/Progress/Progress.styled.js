@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const defaultProperties = {
   height: "20px",
   width: "400px",
-  value: "0%",
+  progress: "0%",
 };
 
 export const ProgressOuterContainer = styled.div`
@@ -15,8 +15,38 @@ export const ProgressOuterContainer = styled.div`
 
 export const ProgressInnerContainer = styled.div`
   height: 100%;
-  width: ${({ value }) => `${value}%` || defaultProperties["value"]};
+  width: ${({ progress }) => `${progress}%` || defaultProperties["progress"]};
   border-radius: ${({ rounded }) => (rounded ? "20px" : "none")};
-  background-color: ${({ color }) => color};
+  background-color: ${({ color }) => color || "black"};
   transition: width 0.3s;
+`;
+
+export const CircleProgressBarWrapper = styled.div`
+  position: relative;
+  width: ${({ size }) => size * 2 + 30}px;
+  height: ${({ size }) => size * 2 + 30}px;
+`;
+
+export const CircleProgress = styled.svg`
+  height: 100%;
+  width: 100%;
+`;
+
+export const Circle = styled.circle`
+  fill: none;
+  stroke: #e6e6e6; // light grey
+  stroke-width: 10px;
+`;
+
+export const ProgressCircle = styled.circle`
+  fill: none;
+`;
+
+export const ProgressText = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: ${({ size }) => Math.floor(size / 4)}px;
+  color: orange;
 `;
