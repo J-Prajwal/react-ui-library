@@ -1,3 +1,4 @@
+import AvatarViewer from "./viewerComponents/AvatarViewer/AvatarViewer";
 import ButtonViewer from "./viewerComponents/ButtonViewer/ButtonViewer";
 import LoaderViewer from "./viewerComponents/LoaderViewer/LoaderViewer";
 import ProgressViewer from "./viewerComponents/ProgressViewer/ProgressViewer";
@@ -23,5 +24,10 @@ export const componentList = [
     id: 4,
     name: "Progress",
     component: <ProgressViewer />,
+  },
+  {
+    id: 5,
+    name: "Avatar",
+    component: <AvatarViewer />,
   },
 ];

@@ -12,9 +12,9 @@ function App() {
       <SideBarContainer>
         <SidebarHeader>Component List</SidebarHeader>
         <ComponentListWrapper>
-          {componentList.map((ele, i) => (
-            <ComponentList key={i} onClick={() => handleOnClick(ele)}>
-              {i + 1}. {ele.name}
+          {componentList.map((ele) => (
+            <ComponentList key={ele.id} onClick={() => handleOnClick(ele)}>
+              {ele.id}. {ele.name}
             </ComponentList>
           ))}
         </ComponentListWrapper>
